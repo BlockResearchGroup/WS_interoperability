@@ -1,0 +1,21 @@
+[submodule "examples/02_pybind/01_basic/ext/pybind11"]
+	path = examples/02_pybind/01_basic/ext/pybind11
+	url = https://github.com/pybind/pybind11
+
+[submodule "examples/02_pybind/02_libigl/ext/pybind11"]
+	path = examples/02_pybind/02_libigl/ext/pybind11
+	url = https://github.com/pybind/pybind11
+
+[submodule "examples/02_pybind/03_compas/compas_meshx/ext/pybind11"]
+	path = examples/02_pybind/03_compas/compas_meshx/ext/pybind11
+	url = https://github.com/pybind/pybind11
+
+[submodule "examples/02_pybind/03_compas/compas_meshx/ext/libigl"]
+	path = examples/02_pybind/03_compas/compas_meshx/ext/libigl
+	url = https://github.com/libigl/libigl
+
+[submodule "examples/03_advanced/MeshPattern"]
+	path = examples/03_advanced/MeshPattern
+	url = https://github.com/EPFL-LGG/MeshPattern
+
+
