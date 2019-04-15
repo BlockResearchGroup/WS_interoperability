@@ -40,6 +40,25 @@ Blender 2.8 is still a beta release, but it is the future of Blender.
 The `compas_blender` package in the latest version of COMPAS no longer supports
 older versions.
 
+> **Note**
+>
+> Both on Windows and Mac (for different reasons) Blender should be started from
+> the command line. By adding the Blender executable to the `PATH` this is really
+> simple.
+>
+> *Mac*
+>
+> Add the following to  your `.bash_profile`
+>
+> `export PATH=/Applications/blender/blender.app/Contents/MacOS:$PATH`
+>
+> *Windows*
+>
+> Add the path to the Blender executable to your `PATH` in Environment Variables.
+>
+> `%PROGRAMFILES%\Blender Foundation\Blender\2.80`
+>
+
 We highly recommend VS Code or Sublime Text 3 for your Python/COMPAS coding, since these
 tools provide proper support for `conda` and virtual environments.
 Please follow the installation instructions in the COMPAS docs:
@@ -341,7 +360,7 @@ called `compas_meshx`, create an editable install on our system, and build the d
 
 *   Run `cookiecutter`:
 
-    *   ```cookiecutter gh:BlockResearchGroup/cookeicutter-compas-package```
+    *   ```cookiecutter gh:BlockResearchGroup/cookiecutter-compas-package```
     *   Follow the instructions:
 
         *   ```project name [Name of the project]:``` **COMPAS X**
