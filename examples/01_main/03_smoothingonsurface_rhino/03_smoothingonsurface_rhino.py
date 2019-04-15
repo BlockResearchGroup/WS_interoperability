@@ -19,7 +19,7 @@ guid = compas_rhino.select_mesh()
 mesh = mesh_from_guid(Mesh, guid)
 
 guid = compas_rhino.select_surface()
-surface = RhinoSurface(guid)
+surf = RhinoSurface(guid)
 
 
 # extract the input for the smoothing algorithm from the mesh
