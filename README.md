@@ -305,15 +305,6 @@ the active workspace in VS Code or ST3.
 *   **08_fofinplugin_rhino**:
     Use a CommandPlugin for interactive form finding in Rhino.
 
-    *   Install `FoFin` plugin.
-    *   Steps:
-        *   `FoFin_init`
-        *   `FoFin_from-json`
-        *   `FoFin_select-continuous-edges`
-        *   `FoFin_update-edge-attributes`
-        *   `FoFin_compute-equilibrium`
-        *   `FoFin_update-settings`
-
     ```
     Under construction...
     ```
