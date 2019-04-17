@@ -11,8 +11,6 @@ Start | Topic
 14:00 | C/C++ & PyBind
 15:00 | **Break**
 15:30 | MeshPattern example
-16:30 | **Break**
-17:00 | C/C++ & Rhino SDK
 
 
 Throughout the workshop, to execute "command line" instructions, please use
@@ -78,9 +76,6 @@ Two of the examples of COMPAS main (`06_triangle_blender` and `07_rpc_rhino`) us
 To install `triangle` on Windows, you will need Microsoft Visual C++ 14.0.
 Many people already have this installed without even knowing it,
 but if you don't, please follow the instructions at the link above.
-
-*   [Rhino: Dev Tools (Windows)](https://developer.rhino3d.com/guides/cpp/installing-tools-windows/)
-*   [Rhino: Dev Tools (Mac)](https://developer.rhino3d.com/guides/rhinocommon/installing-tools-mac/)
 
 **3. Clone the workshop repo**
 
@@ -448,7 +443,11 @@ The examples below can be found in the folder `examples/02_pybind`.
         # Pybind11
         set(PYBIND11_CPP_STANDARD -std=c++11)
         set(PYBIND11_PYTHON_VERSION 3.7)
-        set(PYTHON_EXECUTABLE "$ENV{CONDA_PREFIX}/bin/python3.7")
+        if (WIN32)
+            set(PYTHON_EXECUTABLE "$ENV{CONDA_PREFIX}/python.exe")
+        else ()
+            set(PYTHON_EXECUTABLE "$ENV{CONDA_PREFIX}/bin/python")
+        endif ()
         add_subdirectory(${CMAKE_SOURCE_DIR}/ext/pybind11)
 
         # the example module
@@ -459,11 +458,22 @@ The examples below can be found in the folder `examples/02_pybind`.
 
     *   Compilation instructions
 
+        *Mac*
+
         ```bash
         mkdir build
         cd build
         cmake -DCMAKE_BUILD_TYPE=Release ..
         make -j 4
+        ```
+
+        *Windows*
+
+        ```bash
+        mkdir build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=Release -G"Visual Studio 15 2017 Win64" ..
+        cmake --build . --config Release -- -j4
         ```
 
     *   Run `example.py` in your editor
@@ -482,23 +492,11 @@ The examples below can be found in the folder `examples/02_pybind`.
 
     ![Rhino - 02_libigl: planarize](images/rhino-planarize.png)
 
-## MeshPattern
 
-The code for this example can be found in `examples/03_advanced`. 
+*   **04_meshpattern**
+    Advanced example using `Eigen`, `libigl`, `ShapeOp`.
 
-*   [Slides](MeshPattern.pdf)
-*   [Docs](https://epfl-lgg.github.io/MeshPattern/)
-*   [Repo](https://github.com/EPFL-LGG/MeshPattern)
+    *   [Slides](MeshPattern.pdf)
+    *   [Docs](https://epfl-lgg.github.io/MeshPattern/)
+    *   [Repo](https://github.com/EPFL-LGG/MeshPattern)
 
-
-## C/C++ & Rhino SDK
-
-Use the Rhino SDK to create Rhino compatible bindings for a C/C++ library.
-The examples below can be found in the folder `examples/04_rhinosdk`.
-
-*   [Wrapping Native Libraries](https://developer.rhino3d.com/guides/rhinocommon/wrapping-native-libraries/)
-*   [Cross-Platform Plugins](https://developer.rhino3d.com/guides/rhinocommon/your-first-plugin-crossplatform/)
-
-```
-Under construction...
-```
