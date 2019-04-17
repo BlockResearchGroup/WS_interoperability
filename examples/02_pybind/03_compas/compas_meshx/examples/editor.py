@@ -1,3 +1,5 @@
+import os
+
 import numpy
 from itertools import groupby
 
@@ -10,9 +12,14 @@ from compas.utilities import i_to_rgb
 
 from compas_meshx import isolines
 
+
+# define the location of the current file
+HERE = os.path.dirname(__file__)
+FILE = os.path.join(HERE, 'tubemesh.json')
+
 # make a quad mesh from a JSON file
 # and convert to a triangle mesh
-mesh = Mesh.from_json('tubemesh.json')
+mesh = Mesh.from_json(FILE)
 mesh_quads_to_triangles(mesh)
 
 # convert the mesh to vertex coordinates

@@ -113,3 +113,9 @@ venv.bak/
 
 ext/**
 !ext/PLACEHOLDER
+
+.vs
+
+*.ilk
+*.pdb
+

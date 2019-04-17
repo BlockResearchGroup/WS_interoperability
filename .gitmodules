@@ -13,6 +13,6 @@
 [submodule "examples/02_pybind/03_compas/compas_meshx/ext/libigl"]
 	path = examples/02_pybind/03_compas/compas_meshx/ext/libigl
 	url = https://github.com/libigl/libigl
-[submodule "examples/03_advanced/MeshPattern"]
-	path = examples/03_advanced/MeshPattern
+[submodule "examples/02_pybind/04_meshpattern/MeshPattern"]
+	path = examples/02_pybind/04_meshpattern/MeshPattern
 	url = https://github.com/EPFL-LGG/MeshPattern

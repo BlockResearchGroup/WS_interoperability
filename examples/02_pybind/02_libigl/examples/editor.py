@@ -14,6 +14,7 @@ from compas.utilities import i_to_rgb
 
 # define the location of the current file
 HERE = os.path.dirname(__file__)
+FILE = os.path.join(HERE, 'tubemesh.json')
 
 # insert the path to the compiled libraries in PYTHONPATH
 sys.path.insert(0, os.path.join(HERE, '../modules'))
@@ -23,7 +24,7 @@ import isolines
 
 # make a quad mesh from a JSON file
 # and convert to a triangle mesh
-mesh = Mesh.from_json('tubemesh.json')
+mesh = Mesh.from_json(FILE)
 mesh_quads_to_triangles(mesh)
 
 # convert the mesh to vertex coordinates
@@ -37,7 +38,7 @@ F = numpy.array(faces, dtype=numpy.int32)
 # get the Z cooridnates of the vertices
 # and define the number of contours
 Z = V[:, 2]
-N = 50
+N = 100
 
 # compute the contour lines
 result = isolines.contours(V, F, Z, N)
