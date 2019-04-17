@@ -115,6 +115,7 @@ ext/**
 !ext/PLACEHOLDER
 
 .vs
+.vscode
 
 *.ilk
 *.pdb
